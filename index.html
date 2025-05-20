@@ -15,22 +15,45 @@
 
   <!-- internal css  -->
   <style>
-    body{
+    body {
       margin: 0;
       padding: 0;
     }
-    .slick-dots li button:before{
+
+    .slick-dots li button:before {
       font-size: 20px;
     }
-    .demo-slider{
+
+    .demo-slider {
       padding: 20px 0px;
-    }
-    .demo-content {
-      width: 100%;
+      width: 96%;
+      margin: auto;
     }
 
-    img {
+    .demo-content {
       width: 100%;
+      height: 350px;
+      margin: 0px 5px;
+    }
+
+    .demo1 {
+      background: url("images/demo1.jpg") no-repeat center/cover;
+    }
+
+    .demo2 {
+      background: url("images/demo2.jpg") no-repeat center/cover;
+    }
+
+    .demo3 {
+      background: url("images/demo3.jpg") no-repeat center/cover;
+    }
+
+    .demo4 {
+      background: url("images/demo4.jpg") no-repeat center/cover;
+    }
+
+    .demo5 {
+      background: url("images/demo5.jpg") no-repeat center/cover;
     }
   </style>
 </head>
@@ -38,11 +61,11 @@
 <body>
   <!-- slider starts  -->
   <div class="demo-slider">
-    <div class="demo-content"><img src="images/demo1.jpg" alt="slide-image"></div>
-    <div class="demo-content"><img src="images/demo2.jpg" alt="slide-image"></div>
-    <div class="demo-content"><img src="images/demo3.jpg" alt="slide-image"></div>
-    <div class="demo-content"><img src="images/demo4.jpg" alt="slide-image"></div>
-    <div class="demo-content"><img src="images/demo5.jpg" alt="slide-image"></div>
+    <div class="demo-content demo1"></div>
+    <div class="demo-content demo2"></div>
+    <div class="demo-content demo3"></div>
+    <div class="demo-content demo4"></div>
+    <div class="demo-content demo5"></div>
   </div>
 
 
@@ -56,15 +79,17 @@
       $('.demo-slider').slick({
         dots: true,
         infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
         speed: 300,
         slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
         responsive: [
           {
             breakpoint: 992,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 3,
+              slidesToScroll: 1,
               infinite: true,
               dots: true
             }
@@ -73,7 +98,7 @@
             breakpoint: 768,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 2
+              slidesToScroll: 1
             }
           },
           {
