@@ -12,6 +12,7 @@
   <!-- all css files  -->
   <link rel="stylesheet" href="css/slick-theme.css">
   <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
 
   <!-- internal css  -->
   <style>
@@ -20,6 +21,7 @@
       padding: 0;
     }
 
+    /* slick slide starts  */
     .slick-dots li button:before {
       font-size: 20px;
     }
@@ -55,11 +57,31 @@
     .demo5 {
       background: url("images/demo5.jpg") no-repeat center/cover;
     }
+
+    /* magnific popup starts  */
+    .items-gallery {
+      height: 400px;
+      width: 96%;
+      margin: 50px auto;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .items-gallery a {
+      width: 33%;
+      margin: 0px auto;
+      display: block;
+    }
+
+    .items-gallery img {
+      width: 100%;
+    }
   </style>
 </head>
 
 <body>
-  <!-- slider starts  -->
+  <!-- slick slider starts  -->
   <div class="demo-slider">
     <div class="demo-content demo1"></div>
     <div class="demo-content demo2"></div>
@@ -68,14 +90,25 @@
     <div class="demo-content demo5"></div>
   </div>
 
+  <!-- magnific-popup starts  -->
+  <div class="items-gallery">
+    <a class="demo-item" href="images/demo4.jpg"><img src="images/demo4.jpg" alt="demo-image"></a>
+    <a class="demo-item" href="images/demo2.jpg"><img src="images/demo2.jpg" alt="demo-image"></a>
+    <a class="demo-item" href="images/demo3.jpg"><img src="images/demo3.jpg" alt="demo-image"></a>
+    <a class="demo-item" href="images/demo4.jpg"><img src="images/demo4.jpg" alt="demo-image"></a>
+  </div>
+
 
   <!-- all js files  -->
   <script src="js/jquery.min.js"></script>
   <script src="js/slick.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+
 
   <!-- internal js  -->
   <script>
     $(document).ready(function () {
+      // slick slide starts 
       $('.demo-slider').slick({
         dots: true,
         infinite: true,
@@ -113,7 +146,18 @@
           // instead of a settings object
         ]
       });
+
+      // magnific popup starts 
+      $('.items-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        gallery: {
+          // options for gallery
+          enabled: true
+        },
+      });
     })
+
   </script>
 </body>
 
